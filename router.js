@@ -1,8 +1,4 @@
-const users = [
-  { id: 1, name: 'user 1', gender: 1, group: 'A' },
-  { id: 2, name: 'user 2', gender: 2, group: 'A' },
-  { id: 3, name: 'user 3', gender: 3, group: 'B' },
-]
+const users = require('./users')
 
 const router = (pathname) => {
   switch (pathname) {
@@ -14,7 +10,7 @@ const router = (pathname) => {
     case '/users':
       return {
         statusCode: 200,
-        responseData: JSON.stringify(users),
+        responseData: users,
       }
     default:
       return {
